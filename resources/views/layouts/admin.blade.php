@@ -345,18 +345,29 @@
                 <li class="treeview">
                     <a href="#">
                         <i class="fa fa-files-o"></i>
-                        <span>Add Data </span>
-
-            </span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <i class="fa fa-th"></i> <span>Create</span>
+                        <span>Class Management </span>
                         <span class="pull-right-container">
-              <small class="label pull-right bg-green">new</small>
+                    <i class="fa fa-angle-left pull-right"></i>
             </span>
                     </a>
+                    <ul class="treeview-menu">
+                        <li><a href="pages/UI/general.html"><i class="fa fa-circle-o"></i> Add class</a></li>
+                        <li><a href="pages/UI/icons.html"><i class="fa fa-circle-o"></i> Update</a></li>
+
+                    </ul>
+                </li>
+                <li class="treeview">
+                    <a href="#">
+                        <i class="fa fa-th"></i> <span>Subject Management</span>
+                        <span class="pull-right-container">
+                            <i class="fa fa-angle-left pull-right"></i>
+            </span>
+                    </a>
+                    <ul class="treeview-menu">
+                        <li><a href="pages/UI/general.html"><i class="fa fa-circle-o"></i>Add Subject</a></li>
+                        <li><a href="pages/UI/icons.html"><i class="fa fa-circle-o"></i> Update</a></li>
+
+                    </ul>
                 </li>
                 <li class="treeview">
                     <a href="#">
