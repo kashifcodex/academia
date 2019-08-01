@@ -19,8 +19,11 @@ Route::get('/', function () {
 Route::post('/checklogin', 'MyController@checklogin');
 Route::get('/index', 'MyController@Index');
 Route::get('/logout', 'MyController@logout');
-
 Route::get('/pertest', 'MyController@Personality');
+
+Route::get('/addclass', 'ClassSubjController@AddClass');
+Route::post('/insertclass', 'ClassSubjController@InsertClass');
+
 
 Route::group(['middleware' => 'checkRole'] ,function (){
     Route::get('check',function() {
