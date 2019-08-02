@@ -12,10 +12,7 @@
 </head>
 
 <body>
-
-
 	<!-- form start -->
-
 	<section class="content">
 		<div class="row">
 			<div class="col-md-12">
@@ -52,35 +49,6 @@
 			</div>
 		</div>
 	</section>
-
-
-	<!--*************************************************************-->
-
-
-
-	<div class="form-group">
-		<form action="/testing/public/insertclass" method="post">
-			{{ csrf_field() }}
-			<h2 class="text-center">Class Form</h2>
-			<div class="form-group">
-				<input type="text" class="form-control" name="name" placeholder="Class Name" required="required">
-			</div>
-			<div class="form-group">
-				<input type="text" class="form-control" name="description" placeholder="Description..." required="required">
-			</div>
-			<div class="form-group">
-				<input type="text" class="form-control" name="typeId" placeholder="ID Type" required="required">
-			</div>
-			<div class="form-group">
-				<input type="text" class="form-control" name="year" placeholder="Class Year" required="required">
-			</div>
-			<div  class="text-center">
-				<button type="submit" class="btn btn-primary btn-lg" >Insert</button>
-			</div>
-
-		</form>
-
-	</div>
 </body>
 </html>
 @endsection

@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use DB;
 use App\classes;
 use App\Degree;
 use Illuminate\Http\Request;
@@ -24,7 +24,19 @@ class ClassSubjController extends Controller
 
         $class->save();
 
-        return redirect('index');
+        return redirect('classtable');
+    }
+
+    public function ClassTable()
+    {
+        $degrees = DB::select('select * from degrees');
+        return view('classviews.classtable', ['degrees'=>$degrees]);
+    }
+
+    public function DeleteDegree($id)
+    {
+        $degrees = DB::select('delete from degrees where id=?',[$id]);
+        return view('classviews.classtable' , ['degrees'=>$degrees]);
     }
 //***********************************************
     public function AddSubject()

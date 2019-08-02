@@ -335,7 +335,6 @@
                         <li><a href="/testing/public/addmcqs"><i class="fa fa-circle-o"></i>Add MCQ's</a></li>
                         <li><a href="/testing/public/addtutorials"><i class="fa fa-circle-o"></i>Add Tutorials</a></li>
                         <li><a href="pages/UI/icons.html"><i class="fa fa-circle-o"></i> Update</a></li>
-
                     </ul>
                 </li>
                 <li class="treeview">
