@@ -29,6 +29,18 @@ Route::post('/insertclass', 'ClassSubjController@InsertClass');
 Route::get('/addsubject', 'ClassSubjController@AddSubject');
 Route::post('/insertsubject', 'ClassSubjController@InsertSubject');
 
+//Route for add and insert Chapter
+Route::get('/addchapter', 'ClassSubjController@AddChapter');
+Route::post('/insertchapter', 'ClassSubjController@InsertChapter');
+
+//Route for add and insert MCQ's
+Route::get('/addmcqs', 'ClassSubjController@AddMCQS');
+Route::post('/insertmcqs', 'ClassSubjController@InsertMCQS');
+
+//Route for add and insert Tutorials
+Route::get('/addtutorials', 'ClassSubjController@AddTutorials');
+Route::post('/inserttutorials', 'ClassSubjController@InsertTutorials');
+
 
 
 
