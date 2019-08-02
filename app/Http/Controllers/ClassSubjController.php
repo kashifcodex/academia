@@ -26,4 +26,23 @@ class ClassSubjController extends Controller
 
         return redirect('index');
     }
+//***********************************************
+    public function AddSubject()
+    {
+        return view('classviews.addsubject');
+    }
+
+    public function InsertSubject()
+    {
+        $subject = new Degree();
+
+        $subject->name = request('name');
+        $subject->description = request('description');
+        $subject->typeId = request('typeId');
+        
+
+        $subject->save();
+
+        return redirect('index');
+    }
 }

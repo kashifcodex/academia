@@ -329,7 +329,8 @@
             </span>
                     </a>
                     <ul class="treeview-menu">
-                        <li><a href="/testing/public/addclass"><i class="fa fa-circle-o"></i>Add class</a></li>
+                        <li><a href="/testing/public/addclass"><i class="fa fa-circle-o"></i>Add Class</a></li>
+                        <li><a href="/testing/public/addsubject"><i class="fa fa-circle-o"></i>Add Subject</a></li>
                         <li><a href="pages/UI/icons.html"><i class="fa fa-circle-o"></i> Update</a></li>
 
                     </ul>
