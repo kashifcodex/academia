@@ -23,7 +23,8 @@ Route::get('/pertest', 'MyController@Personality');
 
 Route::get('/addclass', 'ClassSubjController@AddClass');
 Route::post('/insertclass', 'ClassSubjController@InsertClass');
-
+Route::get('/classtable', 'ClassSubjController@ClassTable');
+Route::get('delete/{id}','ClassSubjController@DeleteDegree');
 
 Route::group(['middleware' => 'checkRole'] ,function (){
     Route::get('check',function() {

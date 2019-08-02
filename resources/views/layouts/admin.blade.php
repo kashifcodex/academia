@@ -330,7 +330,7 @@
                     </a>
                     <ul class="treeview-menu">
                         <li><a href="/testing/public/addclass"><i class="fa fa-circle-o"></i>Add class</a></li>
-                        <li><a href="pages/UI/icons.html"><i class="fa fa-circle-o"></i> Update</a></li>
+                        <li><a href="/testing/public/classtable"><i class="fa fa-circle-o"></i>View Classes</a></li>
 
                     </ul>
                 </li>

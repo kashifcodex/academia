@@ -16,7 +16,7 @@
 <div class="form-group">
     <form action="/testing/public/insertclass" method="post">
         {{ csrf_field() }}
-        <h2 class="text-center">Class Form</h2>
+        <h2  class="text-center text-white bg-black">Class Form</h2>
         <div class="form-group">
             <input type="text" class="form-control" name="name" placeholder="Class Name" required="required">
         </div>
