@@ -21,8 +21,29 @@ Route::get('/index', 'MyController@Index');
 Route::get('/logout', 'MyController@logout');
 Route::get('/pertest', 'MyController@Personality');
 
+//Route for add and insert class
 Route::get('/addclass', 'ClassSubjController@AddClass');
 Route::post('/insertclass', 'ClassSubjController@InsertClass');
+
+//Route for add and insert subject
+Route::get('/addsubject', 'ClassSubjController@AddSubject');
+Route::post('/insertsubject', 'ClassSubjController@InsertSubject');
+
+//Route for add and insert Chapter
+Route::get('/addchapter', 'ClassSubjController@AddChapter');
+Route::post('/insertchapter', 'ClassSubjController@InsertChapter');
+
+//Route for add and insert MCQ's
+Route::get('/addmcqs', 'ClassSubjController@AddMCQS');
+Route::post('/insertmcqs', 'ClassSubjController@InsertMCQS');
+
+//Route for add and insert Tutorials
+Route::get('/addtutorials', 'ClassSubjController@AddTutorials');
+Route::post('/inserttutorials', 'ClassSubjController@InsertTutorials');
+
+
+
+
 
 
 Route::group(['middleware' => 'checkRole'] ,function (){
