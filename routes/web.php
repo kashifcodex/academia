@@ -15,8 +15,17 @@ Route::get('/', function () {
    return view('login');
 });
 
+
 //Route for Userhome Controller
 Route::get('/userhome','UserhomeController@Userhome');
+
+// Student tester CRUD using AJAX
+Route::get('addsubject', 'AjaxdataController@index')->name('ajaxdata');
+Route::get('ajaxdata/getdata', 'AjaxdataController@getdata')->name('ajaxdata.getdata');
+Route::post('ajaxdata/postdata', 'AjaxdataController@postdata')->name('ajaxdata.postdata');
+Route::get('ajaxdata/fetchdata', 'AjaxdataController@fetchdata')->name('ajaxdata.fetchdata');
+Route::get('ajaxdata/removedata', 'AjaxdataController@removedata')->name('ajaxdata.removedata');
+
 
 //Route::get('/', 'MyController@Login');
 Route::post('/checklogin', 'MyController@checklogin');
@@ -24,13 +33,19 @@ Route::get('/index', 'MyController@Index');
 Route::get('/logout', 'MyController@logout');
 Route::get('/pertest', 'MyController@Personality');
 
-//Route for add and insert class
+//Route for Add, update, delete class
 Route::get('/addclass', 'ClassSubjController@AddClass');
 Route::post('/insertclass', 'ClassSubjController@InsertClass');
+
 Route::get('/allclasses', 'ClassSubjController@AllClasses');
 
+
+Route::get('/update', 'ClassSubjController@update');
+Route::get('delete/{id}','ClassSubjController@DeleteDegree');
+
 //Route for add and insert subject
-Route::get('/addsubject', 'ClassSubjController@AddSubject');
+//Route::get('/addsubject', 'ClassSubjController@index');
+Route::post('/store', 'ClassSubjController@store');
 Route::post('/insertsubject', 'ClassSubjController@InsertSubject');
 Route::get('/allsubjects', 'ClassSubjController@AllSubjects');
 
