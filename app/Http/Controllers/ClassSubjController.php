@@ -5,9 +5,60 @@ use DB;
 use App\classes;
 use App\Degree;
 use Illuminate\Http\Request;
+use Validator;
+use DataTables;
 
 class ClassSubjController extends Controller
 {
+    public function index()
+    {
+        if(request()->ajax())
+        {
+            return datatables()->of(Degree::latest()->get())
+                ->addColumn('action', function($data){
+                    $button = '<button type="button" name="edit" id="'.$data->id.'" class="edit btn btn-primary btn-sm">Edit</button>';
+                    $button .= '&nbsp;&nbsp;';
+                    $button .= '<button type="button" name="delete" id="'.$data->id.'" class="delete btn btn-danger btn-sm">Delete</button>';
+                    return $button;
+                })
+                ->rawColumns(['action'])
+                ->make(true);
+        }
+        return view('classviews.addsubject');
+    }
+
+    public function store(Request $request)
+    {
+        $rules = array(
+            'name'         =>  'required',
+            'description'  =>  'required',
+            'typeId'       =>  'required',
+            'year'         =>  'required'
+        );
+
+        $error = Validator::make($request->all(), $rules);
+
+        if($error->fails())
+        {
+            return response()->json(['errors' => $error->errors()->all()]);
+        }
+
+
+
+        $form_data = array(
+
+            'name'        =>  $request->name,
+            'description' =>  $request->description,
+            'typeId'      =>  $request->typeId,
+            'year'        =>  $request->year
+        );
+
+        Degree::create($form_data);
+
+        return response()->json(['success' => 'Data Added successfully.']);
+    }
+    // ********* Class CRUD operations Add,Update,delete ***************
+
     public function AddClass()
     {
         return view('classviews.addclass');
@@ -27,6 +78,7 @@ class ClassSubjController extends Controller
         return redirect('classtable');
     }
 
+    // Display Degrees DB values in Table view
     public function ClassTable()
     {
         $degrees = DB::select('select * from degrees');
@@ -35,26 +87,56 @@ class ClassSubjController extends Controller
 
     public function DeleteDegree($id)
     {
-        $degrees = DB::select('delete from degrees where id=?',[$id]);
-        return view('classviews.classtable' , ['degrees'=>$degrees]);
+        Degree::find($id)->delete();
+        return redirect('classtable');
+        // $degrees = DB::select('delete from degrees where id=?',[$id]);
+        //echo '<pre>'; print_r($degrees); echo '</pre>';
     }
-//***********************************************
-    public function AddSubject()
+
+    public function edit($id)
     {
-        return view('classviews.addsubject');
+        if(request()->ajax())
+        {
+            $data = Degree::findOrFail($id);
+            return response()->json(['data' => $data]);
+        }
     }
+
+    public function update(Request $request)
+    {
+        $rules = array(
+            'name'    =>  'required',
+            'description'     =>  'required',
+            'typeId'    =>  'required',
+            'year'    =>  'required',
+        );
+        $error = Validator::make($request->all(), $rules);
+
+        if($error->fails())
+        {
+            return response()->json(['errors' => $error->errors()->all()]);
+        }
+
+        $form_data = array(
+            'name'       =>   $request->name,
+            'description'        =>   $request->description,
+            'typeId'       =>   $request->typeId,
+            'year'       =>   $request->year,
+
+        );
+        Degree::whereId($request->hidden_id)->update($form_data);
+
+        return response()->json(['success' => 'Data is successfully updated']);
+    }
+
+//****************************************************************************
+//    public function AddSubject()
+//    {
+//        return view('classviews.addsubject');
+//    }
 
     public function InsertSubject()
     {
-        $subject = new Degree();
-
-        $subject->name = request('name');
-        $subject->description = request('description');
-        $subject->typeId = request('typeId');
-        
-
-        $subject->save();
-
         return redirect('index');
     }
 //*********************************************************
@@ -65,15 +147,6 @@ class ClassSubjController extends Controller
 
     public function InsertChapter()
     {
-        $chapter = new Degree();
-
-        $chapter->name = request('name');
-        $chapter->description = request('description');
-        $chapter->typeId = request('typeId');
-        
-
-        $chapter->save();
-
         return redirect('index');
     }
 
@@ -85,17 +158,6 @@ class ClassSubjController extends Controller
 
     public function InsertMCQS()
     {
-        $mcqs = new Degree();
-
-        $mcqs->mcqsstatement = request('msqsstatement');
-        $mcqs->option1 = request('option1');
-        $mcqs->option2 = request('option2');
-        $mcqs->option3 = request('option3');
-        $mcqs->option4 = request('option4');
-        
-
-        $mcqs->save();
-
         return redirect('index');
     }
 

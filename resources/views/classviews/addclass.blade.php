@@ -14,28 +14,33 @@
 <body>
 	<!-- form start -->
 	<section class="content">
-		<div class="row">
-			<div class="col-md-12">
-				<div class="box box-primary">
-					
+
+			<div class="col-md-7" >
+				<div class="box box-solid box-info">
+					<div class="panel panel-info">
+						<div class="panel-heading text-black text-bold">Add Class</div>		</div>
+
 					<form action="/testing/public/insertclass" method="post">
 						{{ csrf_field() }}
 						<div class="box-body">
 							<div class="form-group">
 								<label for="name">Class Name</label>
-								<input type="text" class="form-control" name="name" placeholder="Class Name" required="required">
+								<input type="text" class="form-control" name="name" placeholder="class.." required="required">
 							</div>
 							<div class="form-group">
 								<label for="description">Description</label>
-								<input type="text" class="form-control" name="description" placeholder="Description..." required="required">
+								<div class="form-group">
+									<textarea class="form-control rounded-0" name="description" placeholder="Description..." required="required" rows="3"></textarea>
+								</div>
+
 							</div>
 							<div class="form-group">
 								<label for="typeId">ID Type</label>
-								<input type="text" class="form-control" name="typeId" placeholder="ID Type" required="required">
+								<input type="text" class="form-control" name="typeId" placeholder="ID" required="required">
 							</div>
 							<div class="form-group">
 								<label for="year">Class Year</label>
-								<input type="text" class="form-control" name="year" placeholder="Class Year" required="required">
+								<input type="text" class="form-control" name="year" placeholder="Year" required="required">
 							</div>
 
 						</div>
