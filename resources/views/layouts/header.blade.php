@@ -330,7 +330,7 @@
             </span>
                     </a>
                     <ul class="treeview-menu">
-                        <li><a href="/addclass"><i class="fa fa-circle-o"></i>Add class</a></li>
+                        <li><a href="/testing/public/addclass"><i class="fa fa-circle-o"></i>Add class</a></li>
                         <li><a href="pages/UI/icons.html"><i class="fa fa-circle-o"></i> Update</a></li>
 
                     </ul>
@@ -482,9 +482,7 @@
 
     <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
-
         @yield('content')
-
     </div>
 
     <!-- /.Footer -->

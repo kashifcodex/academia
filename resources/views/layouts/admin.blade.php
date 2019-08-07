@@ -312,6 +312,12 @@
             <ul class="sidebar-menu" data-widget="tree">
                 <li class="header">MAIN NAVIGATION</li>
                 <li class="active treeview">
+                    <a href="#">
+                        <i class="fa fa-dashboard"></i> <span>Dashboard</span>
+                        <span class="pull-right-container">
+
+            </span>
+                    </a>
 
                 </li>
                 <li class="treeview">
@@ -324,13 +330,21 @@
                     </a>
                     <ul class="treeview-menu">
 
-                      
-                        <li><a href="/addclass"><i class="fa fa-circle-o"></i>Add Class</a></li>
-                        <li><a href="/classtable"><i class="fa fa-circle-o"></i>View Class Table</a></li>
-                        <li><a href="/addsubject"><i class="fa fa-circle-o"></i>Add Subject</a></li>
-                        <li><a href="/addchapter"><i class="fa fa-circle-o"></i>Add Chapter</a></li>
-                        <li><a href="/addmcqs"><i class="fa fa-circle-o"></i>Add MCQ's</a></li>
-                        <li><a href="/addtutorials"><i class="fa fa-circle-o"></i>Add Tutorials</a></li>
+                        <li><a href="/testing/public/addclass"><i class="fa fa-circle-o"></i>Add Class</a></li>
+                        <li><a href="/testing/public/allclasses"><i class="fa fa-circle-o"></i>View All Classes</a></li>
+
+                        <li><a href="/testing/public/addsubject"><i class="fa fa-circle-o"></i>Add Subject</a></li>
+                        <li><a href="/testing/public/allsubjects"><i class="fa fa-circle-o"></i>View All Subjects</a></li>
+
+                        <li><a href="/testing/public/addchapter"><i class="fa fa-circle-o"></i>Add Chapter</a></li>
+                        <li><a href="/testing/public/allchapters"><i class="fa fa-circle-o"></i>View All Chapters</a></li>
+
+                        <li><a href="/testing/public/addmcqs"><i class="fa fa-circle-o"></i>Add MCQ's</a></li>
+                        <li><a href="/testing/public/allmcqs"><i class="fa fa-circle-o"></i>View All MCQ'S</a></li>
+
+                        <li><a href="/testing/public/addtutorials"><i class="fa fa-circle-o"></i>Add Tutorials</a></li>
+                        <li><a href="/testing/public/alltutorials"><i class="fa fa-circle-o"></i>View All Tutorials</a></li>
+                        
                     </ul>
                 </li>
                 <li class="treeview">
