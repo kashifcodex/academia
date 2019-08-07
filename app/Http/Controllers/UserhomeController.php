@@ -1,5 +1,5 @@
 <?php
-
+ 
 namespace App\Http\Controllers;
 use Validator;
 use Auth;
