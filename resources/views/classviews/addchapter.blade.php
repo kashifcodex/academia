@@ -44,7 +44,7 @@
 
           	            <div class="col-md-4">
               <div class="form-group">
-                <label>Select Class</label>
+                <label>Select Subject</label>
                 <select class="form-control select2" style="width: 100%;">
                   <option selected="selected">California</option>
                   <option>Alaska</option>

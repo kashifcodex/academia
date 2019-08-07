@@ -323,13 +323,14 @@
             </span>
                     </a>
                     <ul class="treeview-menu">
+
+                      
                         <li><a href="/addclass"><i class="fa fa-circle-o"></i>Add Class</a></li>
                         <li><a href="/classtable"><i class="fa fa-circle-o"></i>View Class Table</a></li>
                         <li><a href="/addsubject"><i class="fa fa-circle-o"></i>Add Subject</a></li>
                         <li><a href="/addchapter"><i class="fa fa-circle-o"></i>Add Chapter</a></li>
                         <li><a href="/addmcqs"><i class="fa fa-circle-o"></i>Add MCQ's</a></li>
                         <li><a href="/addtutorials"><i class="fa fa-circle-o"></i>Add Tutorials</a></li>
-
                     </ul>
                 </li>
                 <li class="treeview">
