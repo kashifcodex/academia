@@ -98,4 +98,37 @@ class ClassSubjController extends Controller
 
         return redirect('index');
     }
+
+    //*********************************************************
+    //************Controllers for showing all data*************
+    public function AllClasses()
+    {
+        return view('classviews.allclasses');
+    }
+
+    //*********************************************************
+    public function AllSubjects()
+    {
+        return view('classviews.allsubjects');
+    }
+
+    //*********************************************************
+    public function AllChapters()
+    {
+        return view('classviews.allchapters');
+    }
+
+    //*********************************************************
+    public function AllMcqs()
+    {
+        return view('classviews.allmcqs');
+    }
+
+    //*********************************************************
+    public function AllTutorials()
+    {
+        return view('classviews.alltutorials');
+    }
+
+
 }
