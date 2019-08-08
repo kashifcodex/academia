@@ -3,20 +3,21 @@
 namespace App\Http\Controllers;
 use Validator;
 use Illuminate\Http\Request;
-use App\Degree;
+use App\Mcq;
 use DataTables;
 
-class AjaxdataController extends Controller
+
+class McqsController extends Controller
 {
-    function index()
+    public function AddMCQS()
     {
-        return view('datatableviews.ajaxdata');
+        return view('datatableviews.mcqs');
     }
 
     function getdata()
     {
-        $degrees = Degree::select('id', 'name', 'description','typeId', 'year');
-        return Datatables::of($degrees)
+        $mcqs = Mcq::select('id', 'question', 'option1','option2', 'option3','option4','ans');
+        return Datatables::of($mcqs)
             ->addColumn('action', function($student){
                 return '<a href="#" class="btn btn-xs btn-primary edit" id="'.$student->id.'"><i class="glyphicon glyphicon-edit"></i> Edit</a>&nbsp;&nbsp;
                         <a href="#" class="btn btn-xs btn-danger delete" id="'.$student->id.'"><i class="glyphicon glyphicon-remove"></i> Delete</a>';
@@ -27,12 +28,14 @@ class AjaxdataController extends Controller
     function fetchdata(Request $request)
     {
         $id = $request->input('id');
-        $student = Degree::find($id);
+        $student = Mcq::find($id);
         $output = array(
-            'name'    =>  $student->name,
-            'description'     =>  $student->description,
-            'typeId'    =>  $student->typeId,
-            'year'    =>  $student->year,
+            'question'    =>  $student->question,
+            'option1'     =>  $student->option1,
+            'option2'    =>  $student->option2,
+            'option3'    =>  $student->option3,
+            'option4'    =>  $student->option4,
+            'ans'    =>  $student->ans,
 
         );
         echo json_encode($output);
@@ -41,10 +44,12 @@ class AjaxdataController extends Controller
     function postdata(Request $request)
     {
         $validation = Validator::make($request->all(), [
-            'name' => 'required',
-            'description'  => 'required',
-            'typeId'  => 'required',
-            'year'  => 'required',
+            'question' => 'required',
+            'option1'  => 'required',
+            'option2'  => 'required',
+            'option3'  => 'required',
+            'option4'  => 'required',
+            'ans'  => 'required',
         ]);
 
         $error_array = array();
@@ -60,11 +65,13 @@ class AjaxdataController extends Controller
         {
             if($request->get('button_action') == 'insert')
             {
-                $student = new Degree([
-                    'name'    =>  $request->get('name'),
-                    'description'     =>  $request->get('description'),
-                    'typeId'    =>  $request->get('typeId'),
-                    'year'    =>  $request->get('year'),
+                $student = new Mcq([
+                    'question'   =>  $request->get('question'),
+                    'option1'    =>  $request->get('option1'),
+                    'option2'    =>  $request->get('option2'),
+                    'option3'    =>  $request->get('option3'),
+                    'option4'    =>  $request->get('option4'),
+                    'ans    '    =>  $request->get('ans'),
                 ]);
                 $student->save();
                 $success_output = '<div class="alert alert-success">Data Inserted</div>';
@@ -72,11 +79,13 @@ class AjaxdataController extends Controller
 
             if($request->get('button_action') == 'update')
             {
-                $student = Degree::find($request->get('student_id'));
-                $student->name = $request->get('name');
-                $student->description = $request->get('description');
-                $student->typeId = $request->get('typeId');
-                $student->year = $request->get('year');
+                $student = Mcq::find($request->get('student_id'));
+                $student->question = $request->get('question');
+                $student->option1 = $request->get('option1');
+                $student->option2 = $request->get('option2');
+                $student->option3 = $request->get('option3');
+                $student->option3 = $request->get('option4');
+                $student->option3 = $request->get('ans');
                 $student->save();
                 $success_output = '<div class="alert alert-success">Data Updated</div>';
             }

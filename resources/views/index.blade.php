@@ -94,7 +94,7 @@
                     <div class="tab-content no-padding">
                         <!-- Morris chart - Sales -->
                         <div class="chart tab-pane active" id="revenue-chart" style="position: relative; height: 300px;">
-                            <br><a class="btn btn-success" href="/testing/public/pertest" >Begin Test</a>
+                            <br><a class="btn btn-success" href="/pertest" >Begin Test</a>
                         </div>
                         <div class="chart tab-pane" id="sales-chart" style="position: relative; height: 300px;"></div>
                     </div>
