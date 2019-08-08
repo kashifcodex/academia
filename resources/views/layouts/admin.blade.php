@@ -43,7 +43,7 @@
 
     <header class="main-header">
         <!-- Logo -->
-        <a href="index2.html" class="logo">
+        <a href="/index" class="logo">
             <!-- mini logo for sidebar mini 50x50 pixels -->
             <span class="logo-mini"><b>A</b>LT</span>
             <!-- logo for regular state and mobile devices -->
@@ -312,7 +312,7 @@
             <ul class="sidebar-menu" data-widget="tree">
                 <li class="header">MAIN NAVIGATION</li>
                 <li class="active treeview">
-                    <a href="#">
+                    <a href="/index">
                         <i class="fa fa-dashboard"></i> <span>Dashboard</span>
                         <span class="pull-right-container">
 
@@ -330,20 +330,8 @@
                     </a>
                     <ul class="treeview-menu">
 
-                        <li><a href="/testing/public/addclass"><i class="fa fa-circle-o"></i>Add Class</a></li>
-                        <li><a href="/testing/public/allclasses"><i class="fa fa-circle-o"></i>View All Classes</a></li>
-
-                        <li><a href="/testing/public/addsubject"><i class="fa fa-circle-o"></i>Add Subject</a></li>
-                        <li><a href="/testing/public/allsubjects"><i class="fa fa-circle-o"></i>View All Subjects</a></li>
-
-                        <li><a href="/testing/public/addchapter"><i class="fa fa-circle-o"></i>Add Chapter</a></li>
-                        <li><a href="/testing/public/allchapters"><i class="fa fa-circle-o"></i>View All Chapters</a></li>
-
-                        <li><a href="/testing/public/addmcqs"><i class="fa fa-circle-o"></i>Add MCQ's</a></li>
-                        <li><a href="/testing/public/allmcqs"><i class="fa fa-circle-o"></i>View All MCQ'S</a></li>
-
-                        <li><a href="/testing/public/addtutorials"><i class="fa fa-circle-o"></i>Add Tutorials</a></li>
-                        <li><a href="/testing/public/alltutorials"><i class="fa fa-circle-o"></i>View All Tutorials</a></li>
+                        <li><a href="/addclass"><i class="fa fa-circle-o"></i>Class CRUD</a></li>
+                        <li><a href="/addclass"><i class="fa fa-circle-o"></i>View Classes</a></li>
                         
                     </ul>
                 </li>
@@ -355,8 +343,17 @@
             </span>
                     </a>
                     <ul class="treeview-menu">
-                        <li><a href="pages/UI/general.html"><i class="fa fa-circle-o"></i>Add Subject</a></li>
-                        <li><a href="pages/UI/icons.html"><i class="fa fa-circle-o"></i> Update</a></li>
+                        <li><a href="/addsubject"><i class="fa fa-circle-o"></i>Add Subject</a></li>
+                        <li><a href="/allsubjects"><i class="fa fa-circle-o"></i>View All Subjects</a></li>
+
+                        <li><a href="/addchapter"><i class="fa fa-circle-o"></i>Add Chapter</a></li>
+                        <li><a href="/allchapters"><i class="fa fa-circle-o"></i>View All Chapters</a></li>
+
+                        <li><a href="/addmcqs"><i class="fa fa-circle-o"></i>Add MCQ's</a></li>
+                        <li><a href="/allmcqs"><i class="fa fa-circle-o"></i>View All MCQ'S</a></li>
+
+                        <li><a href="/addtutorials"><i class="fa fa-circle-o"></i>Add Tutorials</a></li>
+                        <li><a href="/alltutorials"><i class="fa fa-circle-o"></i>View All Tutorials</a></li>
 
                     </ul>
                 </li>

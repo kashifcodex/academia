@@ -1,34 +1,34 @@
 @extends('layouts.header')
 @section('content')
 
-<!DOCTYPE html>
+        <!DOCTYPE html>
 <html>
 <head>
-    <title>Datatables Server Side Processing in Laravel</title>
+    <title>Data table </title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="{{asset('bower_components/datatables.net-bs/css/dataTables.bootstrap.css')}}">
     <script src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
-    <script src="https://cdn.datatables.net/1.10.12/js/dataTables.bootstrap.min.js"></script>
-    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.12/css/dataTables.bootstrap.min.css" />
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 </head>
 <body>
 
 
 <div class="container" >
-    <br />
-    <h3 align="center">DataTables Server Side Processing</h3>
-    <br />
+    <h3 align="center">Data Table of Classes</h3>
     <div class="col-md-offset-10">
         <button type="button" name="add" id="add_data" class="btn btn-success btn-sm">Add New Class</button>
     </div>
     <br />
-    <table id="student_table" class="table table-bordered" style="width: 90%;">
+    <table id="student_table" class="table table-bordered table-hover table-striped" style="width: 95%;">
         <thead>
         <tr>
-            <th>First Name</th>
-            <th>Last Name</th>
-            <th>Action</th>
+            <th width="3%">ID</th>
+            <th width="13%">Class Name</th>
+            <th width="20%">Description</th>
+            <th width="8%">Type Id</th>
+            <th width="8%">Year</th>
+            <th width="10%">Action</th>
         </tr>
         </thead>
     </table>
@@ -46,14 +46,24 @@
                     {{csrf_field()}}
                     <span id="form_output"></span>
                     <div class="form-group">
-                        <label>Enter First Name</label>
-                        <input type="text" name="first_name" id="first_name" class="form-control" />
+                        <label>Class Name</label>
+                        <input type="text" name="name" id="name" class="form-control" />
                     </div>
                     <div class="form-group">
-                        <label>Enter Last Name</label>
-                        <input type="text" name="last_name" id="last_name" class="form-control" />
+                        <label>Description</label>
+                        <input type="text" name="description" id="description" class="form-control" />
+                    </div>
+                    <div class="form-group">
+                        <label>Type Id</label>
+                        <input type="text" name="typeId" id="typeId" class="form-control" />
+                    </div>
+                    <div class="form-group">
+                        <label>Year</label>
+                        <input type="text" name="year" id="year" class="form-control" />
                     </div>
                 </div>
+
+
                 <div class="modal-footer">
                     <input type="hidden" name="student_id" id="student_id" value="" />
                     <input type="hidden" name="button_action" id="button_action" value="insert" />
@@ -72,8 +82,11 @@
             "serverSide": true,
             "ajax": "{{ route('ajaxdata.getdata') }}",
             "columns":[
-                { "data": "first_name" },
-                { "data": "last_name" },
+                { "data": "id" },
+                { "data": "name" },
+                { "data": "description" },
+                { "data": "typeId" },
+                { "data": "year" },
                 { "data": "action", orderable:false, searchable: false}
             ]
         });
@@ -129,8 +142,10 @@
                 dataType:'json',
                 success:function(data)
                 {
-                    $('#first_name').val(data.first_name);
-                    $('#last_name').val(data.last_name);
+                    $('#name').val(data.name);
+                    $('#description').val(data.description);
+                    $('#typeId').val(data.typeId);
+                    $('#year').val(data.year);
                     $('#student_id').val(id);
                     $('#studentModal').modal('show');
                     $('#action').val('Edit');

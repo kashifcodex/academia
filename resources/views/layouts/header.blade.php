@@ -43,7 +43,7 @@
 
     <header class="main-header">
         <!-- Logo -->
-        <a href="index2.html" class="logo">
+        <a href="/index" class="logo">
             <!-- mini logo for sidebar mini 50x50 pixels -->
             <span class="logo-mini"><b>A</b>LT</span>
             <!-- logo for regular state and mobile devices -->
@@ -313,7 +313,7 @@
             <ul class="sidebar-menu" data-widget="tree">
                 <li class="header">MAIN NAVIGATION</li>
                 <li class="active treeview">
-                    <a href="#">
+                    <a href="/index">
                         <i class="fa fa-dashboard"></i> <span>Dashboard</span>
                         <span class="pull-right-container">
 
@@ -330,8 +330,8 @@
             </span>
                     </a>
                     <ul class="treeview-menu">
-                        <li><a href="/testing/public/addclass"><i class="fa fa-circle-o"></i>Add class</a></li>
-                        <li><a href="pages/UI/icons.html"><i class="fa fa-circle-o"></i> Update</a></li>
+                        <li><a href="/addclass"><i class="fa fa-circle-o"></i>Class CRUD</a></li>
+                        <li><a href="/addclass"><i class="fa fa-circle-o"></i>View Classes</a></li>
 
                     </ul>
                 </li>
